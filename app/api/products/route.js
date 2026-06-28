@@ -1,4 +1,6 @@
-export default function handler(req, res) {
+import { NextResponse } from 'next/server';
+
+export async function GET() {
   const products = [
     { 
       "id": 1, 
@@ -15,10 +17,9 @@ export default function handler(req, res) {
       "imageUrl": "https://bexmarket-ng.vercel.app/images/oil.jpg" 
     }
   ];
-  
-  res.status(200).json({
+
+  return NextResponse.json({
     "message": "Success",
     "products": products
   });
 }
-
